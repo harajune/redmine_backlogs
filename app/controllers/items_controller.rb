@@ -15,6 +15,9 @@ class ItemsController < ApplicationController
   end
 
   def update
+      params[:issue].each{|key, val|
+          params[:issue][key] = val.force_encoding("UTF-8")
+      }
     item = Item.update(params)
     render :partial => "item", :locals => { :item => item }
   end
