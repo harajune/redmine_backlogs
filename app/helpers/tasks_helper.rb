@@ -12,4 +12,8 @@ module TasksHelper
     end
     item.subject.length > maxLength ? "item_double" : ""
   end
+
+  def mark_if_closed(item)
+    !item.new_record? && item.issue.status.is_closed? ? "closed" : ""
+  end
 end
