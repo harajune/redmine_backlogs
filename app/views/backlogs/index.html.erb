@@ -54,7 +54,7 @@
   <option value="true">Closed</option>
 </select>
 
-<%= select_tag :tracker_id_options, options_for_select( @project.trackers.collect {|t| [t.name, t.id]} ), :class => "tracker_id" %>
+<%= select_tag :tracker_id_options, options_for_select( @project.trackers.collect {|t| [t.name, t.id]},:selected => 4 ), :class => "tracker_id" %>
 
 <div id="spinner_preload"> </div>
 
