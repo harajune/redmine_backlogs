@@ -130,6 +130,7 @@ class Item < ActiveRecord::Base
   private
   
   def self.custom_points(issue)
+    return nil unless issue
     issue.custom_values.to_a.find { |value| value.custom_field.name == "Points" }
   end
   
